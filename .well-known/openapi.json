@@ -1,0 +1,41 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "WhatsApp RAG Retrieval API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "https://your-domain.com" }
+  ],
+  "paths": {
+    "/retrieve": {
+      "get": {
+        "summary": "Retrieve relevant WhatsApp chat chunks",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "The question or search query to retrieve context for."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON array of relevant chat context chunks.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
