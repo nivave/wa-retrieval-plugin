@@ -10,6 +10,7 @@
   "paths": {
     "/retrieve": {
       "get": {
+        "operationId": "retrieveChunks",
         "summary": "Retrieve relevant WhatsApp chat chunks",
         "parameters": [
           {
