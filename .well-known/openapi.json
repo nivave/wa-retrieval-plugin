@@ -5,7 +5,7 @@
     "version": "1.0.0"
   },
   "servers": [
-    { "url": "https://nivave.github.io/wa-retrieval-plugin" }
+    { "url": "https://wa-retrieval.nivaverbuch.workers.dev" }
   ],
   "paths": {
     "/retrieve": {
