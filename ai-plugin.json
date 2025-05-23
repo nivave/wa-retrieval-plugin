@@ -9,10 +9,9 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://your-domain.com/.well-known/openapi.json",
+    "url": "https://raw.githubusercontent.com/nivave/wa-retrieval-plugin/refs/heads/main/ai-plugin.json",
     "is_user_authenticated": false
   },
-  "logo_url": "https://your-domain.com/logo.png",
-  "contact_email": "support@your-domain.com",
-  "legal_info_url": "https://your-domain.com/legal"
+  "logo_url": "https://raw.githubusercontent.com/nivave/wa-retrieval-plugin/refs/heads/main/wa_plugin_logo.png",
+  "contact_email": "niv.a@taboola.com"
 }
