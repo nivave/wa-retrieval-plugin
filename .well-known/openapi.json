@@ -45,10 +45,33 @@
     "/all": {
       "get": {
         "operationId": "getAllChunks",
-        "summary": "Retrieve the entire chat history as an array of chunks",
+        "summary": "Retrieve the entire chat history or a limited subset",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of chunks to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10000
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of chunks to skip before starting",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "All available WhatsApp chat chunks",
+            "description": "All or partial WhatsApp chat chunks",
             "content": {
               "application/json": {
                 "schema": {
