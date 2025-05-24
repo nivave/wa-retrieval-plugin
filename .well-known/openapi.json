@@ -5,31 +5,82 @@
     "version": "1.0.0"
   },
   "servers": [
-    { "url": "https://wa-retrieval.nivaverbuch.workers.dev" }
+    {
+      "url": "https://wa-retrieval.nivaverbuch.workers.dev"
+    }
   ],
   "paths": {
     "/retrieve": {
       "get": {
         "operationId": "retrieveChunks",
-        "summary": "Retrieve relevant WhatsApp chat chunks",
+        "summary": "Retrieve relevant chat history chunks",
         "parameters": [
           {
             "name": "q",
             "in": "query",
+            "description": "The user's question or message to retrieve related context for",
             "required": true,
-            "schema": { "type": "string" },
-            "description": "The question or search query to retrieve context for."
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "A JSON array of relevant chat context chunks.",
+            "description": "A list of relevant WhatsApp chat chunks",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
                     "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/all": {
+      "get": {
+        "operationId": "getAllChunks",
+        "summary": "Retrieve the entire chat history as an array of chunks",
+        "responses": {
+          "200": {
+            "description": "All available WhatsApp chat chunks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/size": {
+      "get": {
+        "operationId": "getChunkStats",
+        "summary": "Get metadata about the stored chat chunks",
+        "responses": {
+          "200": {
+            "description": "Chunk metadata including count and estimated token size",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "chunks": {
+                      "type": "integer"
+                    },
+                    "estimated_tokens": {
+                      "type": "integer"
+                    }
                   }
                 }
               }

@@ -3,7 +3,7 @@
   "name_for_human": "WhatsApp RAG Retrieval",
   "name_for_model": "wa_retrieval",
   "description_for_human": "Retrieve WhatsApp chat history context for questions.",
-  "description_for_model": "Use this plugin to retrieve relevant chunks of WhatsApp conversation history given a user query, then answer based on that context.",
+  "description_for_model": "Use this plugin to retrieve relevant WhatsApp chat chunks or the full conversation so you can directly answer user questions based on the returned data, not just identify it.",
   "auth": {
     "type": "none"
   },
